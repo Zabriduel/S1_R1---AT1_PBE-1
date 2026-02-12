@@ -3,6 +3,9 @@ import router from './routes/routes.js';
 import 'dotenv/config';
 
 const app = express();
+
+app.use(express.json());
+
 app.use('/', router)
 
 app.listen(process.env.SERVER_PORT, ()=>{

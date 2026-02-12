@@ -2,7 +2,7 @@ CREATE DATABASE S1_R1_AT1;
 
 USE S1_R1_AT1;
 
-CREATE TABLE categoria (
+CREATE TABLE categorias (
 	idCategoria INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     descricaoCategoria VARCHAR (100) NOT NULL,
     dataCad DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -17,6 +17,6 @@ CREATE TABLE produtos(
     vinculoImagem VARCHAR(150) NOT NULL,
     dataCad DATETIME DEFAULT CURRENT_TIMESTAMP,
     
-    CONSTRAINT fk_categoria_produto FOREIGN KEY(idCategoria) REFERENCES categoria(idCategoria)
+    CONSTRAINT fk_categoria_produto FOREIGN KEY(idCategoria) REFERENCES categorias(idCategoria)
     
 )
