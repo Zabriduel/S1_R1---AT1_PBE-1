@@ -53,10 +53,10 @@ const produtosController = {
             if (!req.file) {
                 return res.status(400).json({ message: 'Arquivo não enviado' });
             }
+            
             const image = req.file.filename;
-
             const resultado = await produtosModels.insert(idCategoria, nomeProduto, valorProduto, image);
-
+            
             if (resultado.insertId === 0) {
                 throw new Error('Ocorreu um erro ao incluir categoria');
             }

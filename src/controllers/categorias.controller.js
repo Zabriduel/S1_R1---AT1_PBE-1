@@ -17,6 +17,9 @@ const categoriasController = {
     selectById: async (req, res) => {
         try {
             const { idCategoria } = req.query;
+              if (isNaN(idCategoria)) {
+                return res.status(400).json({ message: "Forneça valor númerico válido para idCategoria" });
+            }
             const resultado = await categoriasModel.selectCategoria(idCategoria);
             if (resultado === 0) {
                 return res.status(200).json({ messa: 'A consulta não retornou resultados' });
@@ -30,8 +33,11 @@ const categoriasController = {
     incluiCategorias: async (req, res) => {
         try {
             const { descricaoCategoria } = req.query
+            if ( !descricaoCategoria ) {
+                return res.status(400).json({ message: "Você enviou um valor valor vazio confirme e tente novamente" });
+            }
+            
             const resultado = await categoriasModel.insert(descricaoCategoria);
-
             if (resultado.insertId === 0) {
                 throw new Error('Ocorreu um erro ao incluir categoria');
             }
@@ -46,7 +52,11 @@ const categoriasController = {
         try {
             const {idCategoria, descricaoCategoria} = req.query;
             
-            
+            if (isNaN(parseInt(idCategoria)) || !idCategoria) {
+                return res.status(400).json({ message: "Forneça valor númerico válido para IdCategoria" });
+
+            }
+
             const categoriaAtual = await categoriasModel.selectCategoria(idCategoria);
             if (categoriaAtual.length === 0) {
                 return res.status(200).json({ message: 'Categoria não localizado' });
