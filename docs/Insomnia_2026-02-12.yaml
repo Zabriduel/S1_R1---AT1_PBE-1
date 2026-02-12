@@ -84,12 +84,40 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: http://localhost:8081/produtos/produto
+        name: SELECT PRODUTOS by ID
+        meta:
+          id: req_1230f44828164439b4a2ce737e2b7992
+          created: 1770815648085
+          modified: 1770898098276
+          isPrivate: false
+          description: ""
+          sortKey: -1770896926623.5
+        method: GET
+        parameters:
+          - name: idProduto
+            value: "10"
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
       - url: http://localhost:8081/produtos
         name: DELETE PRODUTO
         meta:
           id: req_105386ccd58f4b4e9a59ced4a0be097c
           created: 1770816011303
-          modified: 1770896950635
+          modified: 1770898110156
           isPrivate: false
           description: ""
           sortKey: -1770896926486
@@ -98,12 +126,12 @@ collection:
           mimeType: multipart/form-data
           params:
             - name: idProduto
-              value: "9"
+              value: "10"
               description: ""
               disabled: false
         parameters:
           - name: idProduto
-            value: "8"
+            value: "10"
             description: ""
             disabled: false
         headers:
@@ -126,7 +154,7 @@ collection:
         meta:
           id: req_31fe91ed9539423786f35f16b19cd1d5
           created: 1770894638714
-          modified: 1770896952319
+          modified: 1770897477676
           isPrivate: false
           description: ""
           sortKey: -1770896926536
@@ -172,34 +200,6 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8081/categorias/categoria
-        name: SELECT CATEGORIA by ID
-        meta:
-          id: req_805b593a35ba42599bb7e5e33ba12dd8
-          created: 1770896486495
-          modified: 1770896943413
-          isPrivate: false
-          description: ""
-          sortKey: -1770896926586
-        method: GET
-        parameters:
-          - name: idCategoria
-            value: "1"
-            description: ""
-            disabled: false
-        headers:
-          - name: User-Agent
-            value: insomnia/12.3.1
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
   - name: Categoria
     meta:
       id: fld_49788010119341d485a8ec0791bc89ac
@@ -213,10 +213,10 @@ collection:
         meta:
           id: req_48724378fd26479faf602d1ed14540a5
           created: 1770810689320
-          modified: 1770896983712
+          modified: 1770897846489
           isPrivate: false
           description: ""
-          sortKey: -1770896975294
+          sortKey: -1770896975319
         method: POST
         parameters:
           - name: descricaoCategoria
@@ -241,10 +241,10 @@ collection:
         meta:
           id: req_ed254745e05f4c39a835e6f507d91931
           created: 1770812261695
-          modified: 1770896975366
+          modified: 1770897848961
           isPrivate: false
           description: ""
-          sortKey: -1770896975344
+          sortKey: -1770896975544
         method: GET
         headers:
           - name: User-Agent
@@ -259,19 +259,19 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8081/produtos/produto
-        name: SELECT PRODUTOS by ID
+      - url: http://localhost:8081/categorias/categoria
+        name: SELECT CATEGORIA by ID
         meta:
-          id: req_1230f44828164439b4a2ce737e2b7992
-          created: 1770815648085
-          modified: 1770896977547
+          id: req_805b593a35ba42599bb7e5e33ba12dd8
+          created: 1770896486495
+          modified: 1770898090533
           isPrivate: false
           description: ""
-          sortKey: -1770896975444
+          sortKey: -1770896975494
         method: GET
         parameters:
-          - name: idProduto
-            value: "1"
+          - name: idCategoria
+            value: "10"
             description: ""
             disabled: false
         headers:
@@ -287,12 +287,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8081/categorias/2
+      - url: http://localhost:8081/categorias
         name: UPDATE CATEGORIA
         meta:
           id: req_36ce0d02ce6540b3a30fa8212a4d09c9
           created: 1770897010231
-          modified: 1770897033688
+          modified: 1770897856478
           isPrivate: false
           description: ""
           sortKey: -1770896975194
@@ -300,27 +300,13 @@ collection:
         body:
           mimeType: multipart/form-data
           params:
-            - name: image
-              value: ""
-              description: ""
-              disabled: false
-              fileName: C:\Users\46866874890\Downloads\canetabic.jpg
-              type: file
-            - name: idCategoria
-              value: "1"
-              description: ""
-              disabled: false
-            - name: nomeProduto
-              value: Caneta bic
-              description: ""
-              disabled: false
-            - name: valorProduto
-              value: "3"
+            - name: descricaoCategoria
+              value: Brinquedos
               description: ""
               disabled: false
         parameters:
-          - name: descricao
-            value: maquiagem
+          - name: idCategoria
+            value: "2"
             description: ""
             disabled: false
         headers:
